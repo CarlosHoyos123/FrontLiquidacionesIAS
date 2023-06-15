@@ -1,0 +1,37 @@
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" [ngModel]="information?.name" disabled>
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" [ngModel]="information?.idnumber" disabled>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Cargo</span>
+        <input type="text" class="form-control" [ngModel]="information?.cargo" disabled>
+    </div>
+    <div class="mb-3">
+        <label for="basic-url" class="form-label">Inicio del contrato.</label>
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">Inicio</span>
+            <input type="date" class="form-control" [ngModel]="information?.indate" disabled id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+        </div>
+        <div class="form-text" id="basic-addon4">Texto de ayuda.</div>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Dias laborados.</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+    </div>
+    <div class="row g-2">
+        <div class="col-8">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Salario :$</span>
+                <input type="text" class="form-control" [ngModel]="information?.salary" disabled aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-secondary">Modificar salario</button>
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-secondary">Ver historico.</button>
+        </div>
+    </div>

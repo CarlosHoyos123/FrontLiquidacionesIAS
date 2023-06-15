@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="registryForm">
+        <form class="row g-3">
+            <div class="row">
+                <div class="col mt-3 border p-2">
+                  <label for="inputName" class="form-label fw-semibold">Nombre</label>
+                  <input type="text" class="form-control form-control-sm" id="inputName" name="name" [(ngModel)] = newEmployee.name>
+                </div>
+                <div class="col mt-3 border p-2">
+                    <label for="document" class="form-label fw-semibold">Numero de documento.</label>
+                    <input type="text" class="form-control form-control-sm" id="document" name="documentNumber" [(ngModel)] = newEmployee.idnumber>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-3 border p-2">
+                    <label for="contractDate" class="form-label fw-semibold">Fecha de ingreso.</label>
+                    <input type="text" class="form-control form-control-sm" id="date" name="contractDate" [(ngModel)] = newEmployee.indate>
+                </div>
+                <div class="col mt-3 border p-2">
+                    <label for="cargo" class="form-label fw-semibold">Cargo.</label>
+                    <input type="text" class="form-control form-control-sm" id="cargo" name="cargo" [(ngModel)] = newEmployee.cargo>
+                </div>
+                <div class="col mt-3 border p-2">
+                    <label for="salary" class="form-label fw-semibold">Salary.</label>
+                    <input type="text" class="form-control form-control-sm" id="salary" name="salary" [(ngModel)] = newEmployee.salary>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info btn-lg text-capitalize fw-semibold" (click)="onSubmit()">Registrarse.</button>
+        </form>
+    </div>
+</div>
