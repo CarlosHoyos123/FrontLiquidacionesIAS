@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { CSP_NONCE, Component } from '@angular/core';
 import { Employee } from 'src/app/interfaces/employees/employee';
+import { Model } from 'src/app/interfaces/exceptions/model';
 import { EmployeesService } from 'src/app/services/employees/employees.service';
 
 @Component({
@@ -15,13 +17,20 @@ export class NewEmployeeRegistryComponent {
     cargo:    "",
     salary:   0
   }
+  execptionMsg : Model = {statusNunber: 0, msg: ''}
 
   constructor(private _service: EmployeesService){}
 
   onSubmit(){
     this._service.createUser(this.newEmployee)
-      .subscribe((response: Employee) => {
-        alert("Se ha creado el usuario.")
-      })
+      .subscribe(
+        (response: Employee) => {(this.newEmployee = response)},
+        (error: HttpErrorResponse) => {
+          this.execptionMsg = error.error as Model;
+          if (this.execptionMsg.statusNunber === 400){
+            alert("Hay valores no validos o vacios");
+          }
+        }
+      )
   }
 }

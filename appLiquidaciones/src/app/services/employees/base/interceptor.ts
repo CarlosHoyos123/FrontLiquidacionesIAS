@@ -8,6 +8,7 @@ import { EmployeesService } from '../employees.service';
 
 // Parametros
 import { environment } from '../../../../environments/environments.prod';
+import { Model } from 'src/app/interfaces/exceptions/model';
 
 @Injectable()
 export class Interceptor implements HttpInterceptor {
@@ -61,9 +62,6 @@ export class Interceptor implements HttpInterceptor {
         // Response
         return next.handle(headers).pipe(
             catchError((error: HttpErrorResponse) => {
-                if (error.status === 422){
-                    alert(`${error.statusText} **** `);
-                }
                 return throwError(error);
             })
         );
