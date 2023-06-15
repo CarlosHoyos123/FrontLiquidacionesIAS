@@ -5,7 +5,9 @@
 <div class="container">
     <app-employees-list 
         [employessListchild] = "employessListFather" 
-        (selectedEmployee) = "employeeSelectedInChild($event)">
+        [pagination] = "paginationScope"
+        (selectedEmployee) = "employeeSelectedInChild($event)"
+        (employeesPerPageChange) = "reloadEmployees($event)">
     </app-employees-list>
 </div>
 

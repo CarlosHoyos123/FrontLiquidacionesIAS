@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from 'src/app/interfaces/employees/employee';
+import { Pagination } from 'src/app/interfaces/employees/pagination';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class EmployeesService {
     
   }
 
-  employessInfo(){
-    const url = `${this.url}users`;
+  employessInfo(pagination: Pagination){
+    const url = `${this.url}users/${pagination.Page}-${pagination.EmployeesPerNumber}`;
     console.log(url)
     return this._http.get<Employee[]>(url)
   }
