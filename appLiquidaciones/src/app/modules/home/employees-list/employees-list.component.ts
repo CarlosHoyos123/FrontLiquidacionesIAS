@@ -16,11 +16,32 @@ export class EmployeesListComponent{
   @Input() pagination: Pagination = {Page: 1,  EmployeesPerNumber: 5};
   @Output() employeesPerPageChange: EventEmitter<Pagination> = new EventEmitter();
 
+  maxPage: number = 3;
+
 employeeSelected(employee: Employee){
   this.selectedEmployee.emit(employee)
 }
 
 EmployeesPerPageChange(){
   this.employeesPerPageChange.emit(this.pagination)
+}
+
+FirstPage(){
+  this.pagination.Page =1;
+  this.EmployeesPerPageChange();
+}
+
+PreviousPage(){
+  if (this.pagination.Page > 1){
+    this.pagination.Page--;
+    this.EmployeesPerPageChange();
+  }
+}
+
+NextPage(){
+  if (this.pagination.Page < 3){
+    this.pagination.Page++;
+    this.EmployeesPerPageChange();
+  }
 }
 }

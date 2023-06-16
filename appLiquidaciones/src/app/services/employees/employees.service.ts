@@ -16,7 +16,6 @@ export class EmployeesService {
 
   employessInfo(pagination: Pagination){
     const url = `${this.url}users/${pagination.Page}-${pagination.EmployeesPerNumber}`;
-    console.log(url)
     return this._http.get<Employee[]>(url)
   }
 
