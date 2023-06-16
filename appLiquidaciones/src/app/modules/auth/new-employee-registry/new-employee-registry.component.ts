@@ -24,7 +24,10 @@ export class NewEmployeeRegistryComponent {
   onSubmit(){
     this._service.createUser(this.newEmployee)
       .subscribe(
-        (response: Employee) => {(this.newEmployee = response)},
+        (response: Employee) => {
+          this.newEmployee = response;
+          alert("Se ha creado el nuevo empleado")
+        },
         (error: HttpErrorResponse) => {
           this.execptionMsg = error.error as Model;
           if (this.execptionMsg.statusNunber === 400){
