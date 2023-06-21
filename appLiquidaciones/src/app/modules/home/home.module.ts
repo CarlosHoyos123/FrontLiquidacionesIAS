@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 import { homeRoutes } from './home.routing';
 import { FormsModule } from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
   ],

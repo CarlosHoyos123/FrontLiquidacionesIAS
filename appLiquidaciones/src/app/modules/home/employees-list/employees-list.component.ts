@@ -16,11 +16,18 @@ export class EmployeesListComponent{
   @Input() pagination: Pagination = {Page: 1,  EmployeesPerNumber: 5};
   @Output() employeesPerPageChange: EventEmitter<Pagination> = new EventEmitter();
 
+  detail: String = "Detalle";
+  drop: String = "Eliminar";
+  edit: String = "Editar";
+  show: boolean = false;
+  edition: boolean = true;
   maxPage: number = 3;
 
 employeeSelected(employee: Employee){
   this.selectedEmployee.emit(employee)
 }
+
+
 
 EmployeesPerPageChange(){
   this.employeesPerPageChange.emit(this.pagination)
