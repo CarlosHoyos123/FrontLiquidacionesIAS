@@ -1,45 +1,58 @@
 <div class="container text-center">
     <div class="row">
-        <div class="col">
-            <div class="form-floating mb-3">
-                <input type="text" readonly class="form-control-plaintext" id="fullname" value={{information.name}}>
-                <label for="fullname">Nombre completo</label>
-            </div>
-        </div>
-        <div class="col">
-            <div class="form-floating mb-3">
-                <input type="text" readonly class="form-control-plaintext" id="idnumber" value={{information.idnumber}}>
-                <label for="idnumber">Numero de identificación</label>
-            </div>
-        </div>
-|   </div>
-    <div class="row">
-        <div class="col">
-            <div class="form-floating mb-3">
-                <input type="text" readonly class="form-control-plaintext" id="cargo" value={{information.cargo}}>
-                <label for="cargo">Cargo</label>
-            </div>
-        </div>
-        <div class="col">
-            <div class="form-floating mb-3">
-                <input type="text" readonly class="form-control-plaintext" id="indate" value={{information.indate}}>
-                <label for="indate">Inicio del contrato.</label>
-            </div>
-        </div>
-        <div class="row g-2">
-            <div class="col-8">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Salario :$</span>
-                    <input type="text" class="form-control" [(ngModel)]="information.salary" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-text">.00</span>
+        <div class="col-8">
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" readonly class="form-control-plaintext" id="fullname" value={{information.name}}>
+                        <label for="fullname">Nombre completo</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" readonly class="form-control-plaintext" id="idnumber" value={{information.idnumber}}>
+                        <label for="idnumber">Numero de identificación</label>
+                    </div>
                 </div>
             </div>
-            <div class="col-2">
-                <button type="button" class="btn btn-secondary" (click)="salaryUpdate()">Modificar salario</button>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" readonly class="form-control-plaintext" id="cargo" value={{information.cargo}}>
+                        <label for="cargo">Cargo</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" readonly class="form-control-plaintext" id="indate" value={{information.indate}}>
+                        <label for="indate">Inicio del contrato.</label>
+                    </div>
+                </div>
             </div>
-            <div class="col-2">
-                <button type="button" class="btn btn-secondary">Ver historico.</button>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Salario :$</span>
+                        <input type="text" class="form-control" [(ngModel)]="information.salary" aria-label="Amount (to the nearest dollar)">
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" (click)="salaryUpdate()">Modificar salario</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary" (click)="salaryChangesList()">Ver historico.</button>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="col">
+            <div *ngIf ="salaryChangesFlag ; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <app-salary-changes-table [childList]="salariesList">
+                    </app-salary-changes-table>
+                </ng-template>
+                <ng-template #elseBlock>
+                    <h1 class="display-5 text-center"></h1>
+                </ng-template>
+            </div>
+        </div>
 </div>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from 'src/app/interfaces/employees/employee';
 import { Pagination } from 'src/app/interfaces/employees/pagination';
+import { SalaryLogs } from 'src/app/interfaces/salaries/salaryLogs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,10 @@ export class EmployeesService {
     let body = JSON.stringify(newEmployee);
     const url = `${this.url}user/create`;
     return this._http.post<Employee>(url, body)
+  }
+
+  salaryChangesList(employee: Employee){
+    const url = `${this.url}user/salaryUpdates/${employee.idnumber}`;
+    return this._http.get<SalaryLogs[]>(url)
   }
 }
