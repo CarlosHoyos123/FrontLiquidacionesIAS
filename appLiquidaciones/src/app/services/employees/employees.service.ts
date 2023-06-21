@@ -19,6 +19,12 @@ export class EmployeesService {
     return this._http.get<Employee[]>(url)
   }
 
+  salaryUpdate(EmployeeForSalaryUpdate: Employee){
+    let body = JSON.stringify(EmployeeForSalaryUpdate);
+    const url = `${this.url}user/salaryUpdate`;
+    return this._http.put<Employee>(url, body)
+  }
+
   createUser(newEmployee: Employee){
     let body = JSON.stringify(newEmployee);
     const url = `${this.url}user/create`;

@@ -19,8 +19,6 @@ export class EmployeesListComponent{
   detail: String = "Detalle";
   drop: String = "Eliminar";
   edit: String = "Editar";
-  show: boolean = false;
-  edition: boolean = true;
   maxPage: number = 3;
 
 employeeSelected(employee: Employee){

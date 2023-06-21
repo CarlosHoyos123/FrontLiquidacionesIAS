@@ -19,7 +19,7 @@ import { EmployeeInformationComponent } from './modules/home/employee-informatio
 import { SeveranceSeccionComponent } from './modules/home/severance-seccion/severance-seccion.component';
 import { Interceptor } from './services/employees/base/interceptor';
 import { NewEmployeeRegistryComponent } from './modules/auth/new-employee-registry/new-employee-registry.component';
-import { OperationButonComponent } from './modules/home/operation-buton/operation-buton.component';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +30,7 @@ import { OperationButonComponent } from './modules/home/operation-buton/operatio
     NewEmployeeComponent,
     EmployeeInformationComponent,
     SeveranceSeccionComponent,
-    NewEmployeeRegistryComponent,
-    OperationButonComponent
+    NewEmployeeRegistryComponent
   ],
   imports: [
     ReactiveFormsModule,

@@ -13,7 +13,8 @@
 
 <div *ngIf ="employeeChosen ; then thenBlock else elseBlock"></div>
 <ng-template #thenBlock>
-    
+    <app-employee-information
+    [information] = "selectedEmployeeInChild"></app-employee-information>
 </ng-template>
 <ng-template #elseBlock>
     <h1 class="display-5 text-center">Seleccione el empleado.</h1>
