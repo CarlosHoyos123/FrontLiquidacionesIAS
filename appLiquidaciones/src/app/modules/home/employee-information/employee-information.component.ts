@@ -34,4 +34,8 @@ export class EmployeeInformationComponent implements OnChanges{
         this.salaryChangesFlag = true;
       })
   }
+
+  realizarLiquidacion() {
+    throw new Error('Method not implemented.');
+    }
 }

@@ -1,7 +1,8 @@
 <figure class="text-center">
     <h1 class="display-3">Liquidaciones Empleados</h1>
 </figure>
-    <app-search-bar></app-search-bar>
+    <app-search-bar
+    (eventSearch) = "employeeSearchBar($event)"></app-search-bar>
 <div class="container">
     <app-employees-list 
         [employessListchild] = "employessListFather" 

@@ -36,4 +36,14 @@ export class EmployeesService {
     const url = `${this.url}user/salaryUpdates/${employee.idnumber}`;
     return this._http.get<SalaryLogs[]>(url)
   }
+
+  searchEmployyeById(string: String){
+    const url = `${this.url}user/${string}`;
+    return this._http.get<Employee>(url)
+  }
+
+  searchEmployyeByName(string: String){
+    const url = `${this.url}users/${string}`;
+    return this._http.get<Employee[]>(url)
+  }
 }

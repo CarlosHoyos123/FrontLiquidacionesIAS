@@ -2,17 +2,17 @@
     <div class="row">
         <div class="col-7">
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="text" [(ngModel)]="searchData.toSearch" name="buscar" placeholder="Buscar Empleado" aria-label="Search" (keyup)="oneKeyup()">
+                <button class="btn btn-outline-success" (click)="search()">Search</button>
             </form>
         </div>
         <div class="col-2 text-center">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="idOptions" id="id" value="idValue">
+                <input class="form-check-input" type="radio" name="idOptions" id="id" (click)="typeSelection(true)" [checked]="true">
                 <label class="form-check-label" for="id">ID</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="idOptions" id="name" value="nameValue">
+                <input class="form-check-input" type="radio" name="idOptions" id="name" (click)="typeSelection(false)">
                 <label class="form-check-label" for="name">nombre</label>
             </div>
         </div>

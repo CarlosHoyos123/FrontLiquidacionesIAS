@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/interfaces/employees/employee';
 import { Pagination } from 'src/app/interfaces/employees/pagination';
+import { SearchData } from 'src/app/interfaces/employees/search-data';
 import { EmployeesService } from 'src/app/services/employees/employees.service';
 
 @Component({
@@ -18,10 +19,13 @@ export class LayoutHomeComponent implements OnInit{
   paginationScope: Pagination = {Page: 1, EmployeesPerNumber: 5};
 
   ngOnInit(){
+    this.loadEmployeesListPagination();
+  }
+
+  loadEmployeesListPagination(){
     this._Service.employessInfo(this.paginationScope). 
       subscribe((response: Employee[]) =>{
         this.employessListFather = response;
-        console.log(response)
       })
   }
 
@@ -39,4 +43,24 @@ export class LayoutHomeComponent implements OnInit{
       })
   }
 
+  employeeSearchBar(event: SearchData){
+    if (event.toSearch == ""){
+      this.loadEmployeesListPagination();
+    } else {
+      if (event.typeSearch == true) {
+        console.log("busqueda por id");
+        this._Service.searchEmployyeById(event.toSearch).
+          subscribe((response: Employee) =>{
+            this.employessListFather=[];
+            this.employessListFather.push(response);
+          });
+        } else {
+          console.log("busqueda por nombre");
+          this._Service.searchEmployyeByName(event.toSearch).
+          subscribe((response: Employee[]) =>{
+            this.employessListFather = response;
+          });
+        }
+      }
+    }
 }
