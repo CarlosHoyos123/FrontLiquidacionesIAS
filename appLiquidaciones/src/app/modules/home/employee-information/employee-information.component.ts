@@ -35,7 +35,4 @@ export class EmployeeInformationComponent implements OnChanges{
       })
   }
 
-  realizarLiquidacion() {
-    throw new Error('Method not implemented.');
-    }
 }

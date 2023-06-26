@@ -43,7 +43,7 @@
                     <button type="button" class="btn btn-secondary" (click)="salaryChangesList()">Historico de salarios.</button>
                 </div>
                 <div class="col">
-                    <button type="button" class="btn btn-secondary" (click)="realizarLiquidacion()">Liquidar.</button>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#settlement">Liquidar.</button>
                 </div>
             </div>
         </div>
@@ -56,6 +56,24 @@
                 <ng-template #elseBlock>
                     <h1 class="display-5 text-center"></h1>
                 </ng-template>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="settlement" tabindex="-1" aria-labelledby="settlementModal" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{information.name}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <app-settlement
+                        [employee]="information"></app-settlement>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">-</button>
+                    </div>
+                </div>
             </div>
         </div>
 </div>

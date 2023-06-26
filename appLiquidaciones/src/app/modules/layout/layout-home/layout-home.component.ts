@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from 'src/app/interfaces/employees/employee';
 import { Pagination } from 'src/app/interfaces/employees/pagination';
@@ -48,18 +49,20 @@ export class LayoutHomeComponent implements OnInit{
       this.loadEmployeesListPagination();
     } else {
       if (event.typeSearch == true) {
-        console.log("busqueda por id");
         this._Service.searchEmployyeById(event.toSearch).
           subscribe((response: Employee) =>{
             this.employessListFather=[];
             this.employessListFather.push(response);
+          },(error: HttpErrorResponse) => {
+            alert(error.error.message);
           });
         } else {
-          console.log("busqueda por nombre");
-          this._Service.searchEmployyeByName(event.toSearch).
+        this._Service.searchEmployyeByName(event.toSearch).
           subscribe((response: Employee[]) =>{
             this.employessListFather = response;
-          });
+        },(error: HttpErrorResponse) => {
+          alert(error.error.message);
+        });
         }
       }
     }

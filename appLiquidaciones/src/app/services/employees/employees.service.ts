@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Employee } from 'src/app/interfaces/employees/employee';
 import { Pagination } from 'src/app/interfaces/employees/pagination';
 import { SalaryLogs } from 'src/app/interfaces/salaries/salaryLogs';
+import { Settlement } from 'src/app/interfaces/settlement';
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +46,13 @@ export class EmployeesService {
   searchEmployyeByName(string: String){
     const url = `${this.url}users/${string}`;
     return this._http.get<Employee[]>(url)
+  }
+
+  settlement(forSet: Settlement){
+    let body = JSON.stringify(forSet);
+    const url = `${this.url}user/settlement`;
+    console.log(body);
+    console.log(url);
+    return this._http.post<Settlement>(url, body)
   }
 }

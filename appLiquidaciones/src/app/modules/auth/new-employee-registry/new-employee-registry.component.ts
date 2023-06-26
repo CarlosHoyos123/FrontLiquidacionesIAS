@@ -29,10 +29,11 @@ export class NewEmployeeRegistryComponent {
           alert("Se ha creado el nuevo empleado")
         },
         (error: HttpErrorResponse) => {
-          this.execptionMsg = error.error as Model;
-          if (this.execptionMsg.statusNunber === 400){
-            alert("Hay valores no validos o vacios");
-          }
+        if (error.error.code == 406) {          
+            alert(error.error.message);
+        } else {
+          alert("Informacion no valida.");
+        }
         }
       )
   }

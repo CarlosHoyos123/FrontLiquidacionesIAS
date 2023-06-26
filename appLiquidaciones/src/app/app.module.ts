@@ -20,6 +20,7 @@ import { SeveranceSeccionComponent } from './modules/home/severance-seccion/seve
 import { Interceptor } from './services/employees/base/interceptor';
 import { NewEmployeeRegistryComponent } from './modules/auth/new-employee-registry/new-employee-registry.component';
 import { SalaryChangesTableComponent } from './modules/home/salary-changes-table/salary-changes-table.component';
+import { SettlementComponent } from './modules/home/settlement/settlement.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SalaryChangesTableComponent } from './modules/home/salary-changes-table
     EmployeeInformationComponent,
     SeveranceSeccionComponent,
     NewEmployeeRegistryComponent,
-    SalaryChangesTableComponent
+    SalaryChangesTableComponent,
+    SettlementComponent
   ],
   imports: [
     ReactiveFormsModule,

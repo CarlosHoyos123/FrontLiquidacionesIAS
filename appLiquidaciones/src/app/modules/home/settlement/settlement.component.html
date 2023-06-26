@@ -1,0 +1,154 @@
+
+<div class="container">
+        <div class="row">
+            <div class="col">
+                <label for="fullname">Fecha de liquidacion.</label>
+                <input type="text" id="selectdDate" [(ngModel)]="info.withdrawalDate" >
+            </div>
+            <div class="col">
+                <label for="fullname">Tipo de liquidacion.</label>
+                <input type="text" id="fullname" [(ngModel)]="info.withdrawalReason" >
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-secondary" (click)="settlementService()">Ver liquidacion.</button>
+            </div>
+        </div>
+</div>
+<br>
+<hr>
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="fullname" value={{employee.name}}>
+                <label for="fullname">Nombre completo</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="idnumber" value={{employee.idnumber}}>
+                <label for="idnumber">Numero de identificación</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="cargo" value={{employee.cargo}}>
+                <label for="cargo">Cargo</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{employee.indate}}>
+                <label for="indate">Inicio del contrato.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{employee.salary}}>
+                <label for="indate">Salario.</label>
+            </div>
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.transportApply}}>
+                <label for="indate">Auxilio de transporte.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.transportSupport}}>
+                <label for="indate">Valor auxilio de tranporte.</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.withdrawalDate}}>
+                <label for="indate">fecha de liquidacion.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.withdrawalReason}}>
+                <label for="indate">Razón de salida.</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.workedTotalDays}}>
+                <label for="indate">Dias laborados.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.workedDaysLastYear}}>
+                <label for="indate">Dias laborados en el ultimo año.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.workedDaysLastHalfYear}}>
+                <label for="indate">Dias laborados en el ultimo semestre.</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.vacationDays}}>
+                <label for="indate">Dias de vacaciones.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.baseSalary}}>
+                <label for="indate">Salario Base.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.interesesCesantias}}>
+                <label for="indate">intereses a la cesantia.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.cesatias}}>
+                <label for="indate">Cesantias.</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.primaServicio}}>
+                <label for="indate">Prima de servicio.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.nomina}}>
+                <label for="indate">Nomina.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.liquidacion}}>
+                <label for="indate">liquidacion.</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" readonly class="form-control-plaintext" id="indate" value={{info.bono}}>
+                <label for="indate">Bono.</label>
+            </div>
+        </div>
+    </div>
+</div>

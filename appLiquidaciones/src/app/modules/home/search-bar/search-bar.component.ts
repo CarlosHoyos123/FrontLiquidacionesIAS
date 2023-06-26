@@ -16,7 +16,11 @@ export class SearchBarComponent {
   }
 
   search(){
-    this.eventSearch.emit(this.searchData);
+    if (this.searchData.toSearch == ""){
+      alert("La caja de busqueda no debe estar vacia");
+    } else {
+      this.eventSearch.emit(this.searchData);
+    }
   }
 
   oneKeyup(){
